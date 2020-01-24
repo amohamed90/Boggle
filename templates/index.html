@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Boggle Game</title>
+</head>
+<body>
+
+  <table>
+    {% for row in board %}
+    <tr>
+      {% for cell in row %}
+      <td>{{cell}}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+
+  <p>High Score: <span id="high_score">{{high_score}}</span> in <span id="num_of_plays">{{num_of_plays}}</span> plays</p>
+  <p>Score: <span id="current_score">0</span> Seconds Left: <span id="timer">0</span></p>
+
+  <form action="#">
+    <input type="text" name="word" id="word">
+    <button class="btn">Enter</button>
+  </form>
+
+  <section id=message>
+
+  </section>
+
+  <ul id="played_words">
+
+  </ul>
+
+  <script src="script.js"></script>
+</body>
+</html>

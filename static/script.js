@@ -17,6 +17,7 @@ async function handleClick(event) {
     let response = (await axios.post('/submit', {"word": word})).data;
     console.log(response);
       // post message accordingly
+      
     // add word to ul if valid
     // update score with length of word
 
@@ -28,5 +29,5 @@ async function handleClick(event) {
 
 // }
 
-// function 
+// function
 

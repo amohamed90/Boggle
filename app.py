@@ -22,13 +22,14 @@ def load_game():
 @app.route("/submit", methods=["POST"])
 def validate_word():
     #request.json because axios sends info with json
+    print("AAAAAAAAAAAAAAAAAA", request.form)
     word = request.json["word"]
     board = session["board"]
     validity = boggle_game.check_valid_word(board, word)
-    
+
     if validity == "ok":
         return jsonify({"msg": f"Added:{word}", "cls": "success"})
     elif validity == "not-word":
-        return jsonify({"msg": f"{word} is not a valid English word.", "cls": "fail"}) 
-    else: 
-        return jsonify({"msg": f"{word} is not a word on the board.", "cls": "fail"}) 
+        return jsonify({"msg": f"{word} is not a valid English word.", "cls": "fail"})
+    else:
+        return jsonify({"msg": f"{word} is not a word on the board.", "cls": "fail"})
